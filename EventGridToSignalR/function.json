@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "signalR",
+      "name": "$return",
+      "hubName": "ghbridge",
+      "direction": "out"
+    }
+  ],
+  "scriptFile": "../dist/EventGridToSignalR/index.js"
+}

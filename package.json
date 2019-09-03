@@ -1,0 +1,35 @@
+{
+  "name": "gh-eh-bridge",
+  "version": "1.0.0",
+  "description": "Dispatches GitHub events to an Event Hub",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build && func extensions install",
+    "start:host": "func start",
+    "start": "npm run start:host & npm run watch",
+    "build:production": "npm run prestart && npm prune --production",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
+    "@azure/event-hubs": "^5.0.0-preview.2",
+    "@azure/identity": "^1.0.0-preview.2",
+    "@azure/keyvault-secrets": "^4.0.0-preview.4",
+    "@azure/storage-blob": "^12.0.0-preview.2",
+    "@octokit/rest": "^16.28.7",
+    "@types/jest": "^24.0.18",
+    "azure-eventgrid": "^1.6.0",
+    "ix": "^2.5.3",
+    "ms-rest-azure": "^3.0.0",
+    "parse-link-header": "^1.0.1",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.0.3",
+    "jest": "^24.9.0",
+    "parcel-bundler": "^1.12.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.2"
+  }
+}
